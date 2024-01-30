@@ -1,8 +1,12 @@
 // O Controller deve ser responsável por saber as regras de negócio da aplicação
 
+const clientsRepository = require("../repositories/ClientsRepository");
+
 class ClientController {
-  index(req, res) {
-    return;
+  async index(req, res) {
+    const contacts = await clientsRepository.findAll();
+
+    res.json(contacts);
   }
 
   show(req, res) {
