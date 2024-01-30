@@ -1,0 +1,2 @@
+# Client HTTP
+GET http://localhost:3000/index HTTP/1.1
