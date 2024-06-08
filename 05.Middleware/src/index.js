@@ -5,6 +5,11 @@ const clientRoutes = require("./routes/client.route");
 
 const app = express();
 
+app.use((req, res, next) => {
+  req.id = Math.random().toString(36).substring(7)
+  next()
+})
+
 app.use(defaultRoutes);
 app.use(clientRoutes);
 

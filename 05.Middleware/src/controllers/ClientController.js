@@ -4,7 +4,11 @@ class ClientController {
   async index(req, res) {
     const contacts = await clientsRepository.findAll();
 
-    res.json(contacts);
+    res.json({
+      id: req.id,
+      cod: req.cod,
+      contacts,
+    });
   }
 }
 
